@@ -1,6 +1,4 @@
-﻿using MVCStudenClassAssinment.Model.Model;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -11,12 +9,12 @@ namespace MVCStudenClassAssinment.Model
         public int StudentId { get; set; }
 
         [Required]
-        [MaxLength(100, ErrorMessage = "Student First Name Should be under 100 Characters.")]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
         [DisplayName("Student First Name")]
         public string StudentFirstName { get; set; }
 
         [Required]
-        [MaxLength(100, ErrorMessage = "Student Last Name Should be under 100 Characters.")]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
         [DisplayName("Student Last Name")]
         public string StudentLastName { get; set; }
 
@@ -24,24 +22,33 @@ namespace MVCStudenClassAssinment.Model
         public int? ParentId { get; set; }
 
         [Required]
-        [MaxLength(100, ErrorMessage = "Parent Name Should be under 100 Characters.")]
-        [DisplayName("Parent Name")]
-        public string ParentFullName { get; set; }
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        [DisplayName("Parent First Name")]
+        public string ParentFirstName { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        [DisplayName("Parent Last Name")]
+        public string ParentLastName { get; set; }
+
 
         public int StudentClassId { get; set; }
 
         [Required]
-        [EmailAddress]
         [DisplayName("Student Email")]
+        [EmailAddress]
+        [RegularExpression(".+@.+\\..+", ErrorMessage = "Please Enter Correct Email Address")]
         public string StudentEmail { get; set; }
 
         [Required]
-        [EmailAddress]
         [DisplayName("Parent Email")]
+        [EmailAddress]
+        [RegularExpression(".+@.+\\..+", ErrorMessage = "Please Enter Correct Email Address")]
         public string ParentEmail { get; set; }
 
-        [Phone]
+        [Required]
         [DisplayName("Parent Mobile")]
+        [StringLength(10, ErrorMessage = "The {0} must contains 10 number", MinimumLength = 10)]
         public string ParentMobile { get; set; }
 
         [DisplayName("Status")]
@@ -49,7 +56,7 @@ namespace MVCStudenClassAssinment.Model
 
         public UserTypes UserType { get; set; }
 
-        [DisplayName("Classes")]
+        [DisplayName("Class")]
         public string StudentClass { get; set; }
 
         public List<SchoolClassViewModel> StudentClassList { get; set; }

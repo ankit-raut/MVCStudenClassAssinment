@@ -1,5 +1,7 @@
 ﻿using MVCStudenClassAssinment.Model;
 using MVCStudenClassAssinment.Model.Model;
+using MVCStudenClassAssinment.Model.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,21 +9,43 @@ namespace MVCStudenClassAssinment.DAL
 {
     public class StudentClassService : IStudentClassService
     {
-        public List<SchoolClassViewModel> GetSchoolClasses()
+        #region Public Method
+        public List<SchoolClassViewModel> GetSchoolClasses() => GetClasses();
+
+        public bool UpdateStatus(List<StudenParentViewModel> studentStatusModels) => UpdatUserStatus(studentStatusModels);
+        #endregion
+
+        #region Private Method
+        private static List<SchoolClassViewModel> GetClasses()
         {
-            List<SchoolClassViewModel> viewModelList = new List<SchoolClassViewModel>() ;
             List<SchoolClass> list = null;
-            using (ApplicationDBContext context = new ApplicationDBContext())
+            using (ApplicationDBContext db = new ApplicationDBContext())
             {
-                //viewModelList = context.SchoolClasss.Select(x=> new SchoolClass { Id = x.Id, Name=x.Name }).ToList<SchoolClass>();
-
-                //viewModelList = (from schoolClass in context.SchoolClasss
-                //                 select new SchoolClassViewModel { ClassId = schoolClass.Id, Name = schoolClass.Name }).ToList<SchoolClassViewModel>();
-
-
-                 list = context.SchoolClasss.ToList();
+                list = db.SchoolClasss.ToList();
             }
-            return list.Select(x=> new SchoolClassViewModel { ClassId = x.Id, Name = x.Name }).ToList<SchoolClassViewModel>();
+            return list.Select(x => new SchoolClassViewModel { ClassId = x.Id, Name = x.Name }).ToList<SchoolClassViewModel>();
         }
+
+
+        private static bool UpdatUserStatus(List<StudenParentViewModel> model)
+        {
+            if (model.Count > 0)
+            {
+                using (ApplicationDBContext db = new ApplicationDBContext())
+                {
+                    model.ForEach(x =>
+                    {
+                        foreach (var item in db.Users.Where(y => y.Id == x.StudentId))
+                        {
+                            item.Active = x.Active;
+                        }
+                    });
+
+                    return db.SaveChanges() > 0;
+                }
+            }
+            return true;
+        }
+        #endregion
     }
 }

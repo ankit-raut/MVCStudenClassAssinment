@@ -10,5 +10,7 @@ namespace MVCStudenClassAssinment.DAL
         List<StudenParentViewModel> GetStudentDetailList();
 
         bool SaveStudentDetails(StudenParentViewModel model);
+
+        List<SchoolClassViewModel> GetClassList();
     }
 }

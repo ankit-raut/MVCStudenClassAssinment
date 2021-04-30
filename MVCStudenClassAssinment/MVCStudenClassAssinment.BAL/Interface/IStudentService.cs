@@ -1,4 +1,5 @@
 ﻿using MVCStudenClassAssinment.Model;
+using MVCStudenClassAssinment.Model.ViewModel;
 using System.Collections.Generic;
 
 namespace MVCStudenClassAssinment.BAL
@@ -10,5 +11,10 @@ namespace MVCStudenClassAssinment.BAL
         List<StudenParentViewModel> GetStudenDetailsList();
 
         bool SaveStudentDetails(StudenParentViewModel model);
+
+        List<SchoolClassViewModel> GetClassList();
+
+        bool UpdateStatus(StudentStatusModel[] studentStatusModel);
+
     }
 }

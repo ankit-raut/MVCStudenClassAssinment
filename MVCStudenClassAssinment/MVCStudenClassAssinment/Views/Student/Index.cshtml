@@ -6,9 +6,24 @@
 
 <h2>Index</h2>
 
-<p>
+
+
+<div class="form-group">
+    <div style="float: right!important;margin-bottom: 10px;">
+        @if (!Model.Any(x => x.Active == true))
+        {
+            <input id="submitButtton" type="submit" value="Save" class="btn btn-default" disabled="disabled" />
+        }
+        else
+        {
+            <input id="submitButtton" type="submit" value="Save" class="btn btn-default" />
+        }
+    </div>
+</div>
+
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <table class="table">
     <tr>
         <th>
@@ -18,7 +33,10 @@
             @Html.DisplayNameFor(model => model.StudentLastName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ParentFullName)
+            @Html.DisplayNameFor(model => model.ParentFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParentLastName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.StudentEmail)
@@ -35,39 +53,59 @@
         <th>
             @Html.DisplayNameFor(model => model.StudentClass)
         </th>
+        <th>
+            @Html.DisplayName("Actions")
+        </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.StudentFirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StudentLastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ParentFullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StudentEmail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ParentEmail)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ParentMobile)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Active)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { studentId = item.StudentId})
-        </td>
-        @Html.HiddenFor(modelItem => item.StudentId)
-        @Html.HiddenFor(modelItem => item.ParentId)
-        @Html.HiddenFor(modelItem => item.StudentClassId)
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr data-id="@item.StudentId">
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentMobile)
+            </td>
+            <td>
+                @Html.CheckBoxFor(modelItem => item.Active,
+               new {
+                   @value_StudentId = item.StudentId
+
+               })
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.StudentClass)
+            </th>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { studentId = item.StudentId })
+            </td>
+            @Html.HiddenFor(modelItem => item.StudentId)
+            @Html.HiddenFor(modelItem => item.ParentId)
+            @Html.HiddenFor(modelItem => item.StudentClassId)
+        </tr>
+    }
 
 </table>
+<script src="~/Scripts/Student/StudentList.js"></script>
+<script>
+    $(document).ready(function () {
+        StudentList.Init();
+    });
+</script>
