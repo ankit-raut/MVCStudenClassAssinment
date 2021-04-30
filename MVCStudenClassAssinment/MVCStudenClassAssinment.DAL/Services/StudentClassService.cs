@@ -1,4 +1,5 @@
-﻿using MVCStudenClassAssinment.Model;
+﻿using MVCStudenClassAssinment.DAL.Helper;
+using MVCStudenClassAssinment.Model;
 using MVCStudenClassAssinment.Model.Model;
 using MVCStudenClassAssinment.Model.ViewModel;
 using System;
@@ -27,7 +28,7 @@ namespace MVCStudenClassAssinment.DAL
         }
 
 
-        private static bool UpdatUserStatus(List<StudenParentViewModel> model)
+        private bool UpdatUserStatus(List<StudenParentViewModel> model)
         {
             if (model.Count > 0)
             {
@@ -35,17 +36,15 @@ namespace MVCStudenClassAssinment.DAL
                 {
                     model.ForEach(x =>
                     {
-                        foreach (var item in db.Users.Where(y => y.Id == x.StudentId))
-                        {
-                            item.Active = x.Active;
-                        }
+                     db.Users.Where(y => y.Id == x.StudentId).SetValue(item => item.Active = x.Active);
                     });
-
                     return db.SaveChanges() > 0;
                 }
             }
             return true;
         }
+
+        
         #endregion
     }
 }

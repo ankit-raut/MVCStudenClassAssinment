@@ -55,15 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDBContext.cs" />
+    <Compile Include="Helper\Helper.cs" />
     <Compile Include="Interface\IStudentClassService.cs" />
     <Compile Include="Interface\IStudentService.cs" />
-    <Compile Include="Migrations\202104291425170_IntialDBMigration.cs" />
-    <Compile Include="Migrations\202104291425170_IntialDBMigration.designer.cs">
-      <DependentUpon>202104291425170_IntialDBMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104291618246_IntialDBMigration1.cs" />
-    <Compile Include="Migrations\202104291618246_IntialDBMigration1.designer.cs">
-      <DependentUpon>202104291618246_IntialDBMigration1.cs</DependentUpon>
+    <Compile Include="Migrations\202104301358571_IntialDBMigration.cs" />
+    <Compile Include="Migrations\202104301358571_IntialDBMigration.designer.cs">
+      <DependentUpon>202104301358571_IntialDBMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,11 +78,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104291425170_IntialDBMigration.resx">
-      <DependentUpon>202104291425170_IntialDBMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104291618246_IntialDBMigration1.resx">
-      <DependentUpon>202104291618246_IntialDBMigration1.cs</DependentUpon>
+    <Content Include="Scripts\jquery-1.6.3-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.3.js" />
+    <Content Include="Scripts\jquery-1.6.3.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202104301358571_IntialDBMigration.resx">
+      <DependentUpon>202104301358571_IntialDBMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

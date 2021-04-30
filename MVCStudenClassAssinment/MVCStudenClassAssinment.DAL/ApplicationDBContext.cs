@@ -8,7 +8,7 @@ namespace MVCStudenClassAssinment.DAL
 {
     public class ApplicationDBContext : DbContext
     {
-        public ApplicationDBContext() : base("ApplicationDBContext")
+        public ApplicationDBContext() : base("ApplicationDBContext_1")
         {
         }
 

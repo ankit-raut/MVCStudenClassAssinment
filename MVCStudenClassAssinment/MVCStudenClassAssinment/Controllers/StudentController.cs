@@ -19,7 +19,11 @@ namespace MVCStudenClassAssinment.Controllers
 
         // GET: Student
         [HttpGet]
-        public ActionResult Index() => View(GetStudenDetailsList());
+        public ActionResult Index()
+        {
+            ViewBag.Message = TempData["Message"];
+            return View(GetStudenDetailsList());
+        }
 
         [HttpGet]
         public ActionResult Edit(int studentId) => View(GetStudenDetailById(studentId));
@@ -30,8 +34,10 @@ namespace MVCStudenClassAssinment.Controllers
             ModelState.Remove("StudentEmail");
             if (ModelState.IsValid && SaveStudentDetails(model))
             {
+                ViewBag.Message = TempData["Message"] = "Successfully Updated !";
                 return RedirectToAction("Index");
             }
+            ViewBag.Message = "Not Updated !";
             model.StudentClassList = studentService.GetClassList();
             return View(model);
         }
@@ -40,8 +46,8 @@ namespace MVCStudenClassAssinment.Controllers
         public JsonResult UpdateStudentStatus(StudentStatusModel[] studentStatus)
         {
             Tuple<bool, string> response = UpdateStatus(studentStatus);
-            return Json(new { IsSuccess = response.Item1, IsCommonException = response.Item2}, JsonRequestBehavior.AllowGet);
-        }       
+            return Json(new { IsSuccess = response.Item1, IsCommonException = response.Item2 }, JsonRequestBehavior.AllowGet);
+        }
 
         #region Private Method
 

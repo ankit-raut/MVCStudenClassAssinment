@@ -22,8 +22,8 @@
 </div>
 
 @*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
 <table class="table">
     <tr>
         <th>
@@ -107,5 +107,9 @@
 <script>
     $(document).ready(function () {
         StudentList.Init();
+        var message = "@ViewBag.Message";
+        if (message) {
+        StudentList.ToastMessage("success", message);
+        }
     });
 </script>

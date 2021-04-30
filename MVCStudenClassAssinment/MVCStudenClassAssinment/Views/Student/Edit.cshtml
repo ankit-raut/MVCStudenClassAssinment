@@ -94,3 +94,12 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<script>
+ $(document).ready(function () {
+        StudentList.Init();
+        var message = "@ViewBag.Message";
+        if (message) {
+        StudentList.ToastMessage("error", message);
+        }
+        });
+</script>

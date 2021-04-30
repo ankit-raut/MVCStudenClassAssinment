@@ -13,7 +13,7 @@ namespace MVCStudenClassAssinment.DAL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202104291425170_IntialDBMigration"; }
+            get { return "202104301358571_IntialDBMigration"; }
         }
         
         string IMigrationMetadata.Source
