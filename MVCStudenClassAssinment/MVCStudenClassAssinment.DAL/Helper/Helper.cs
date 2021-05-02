@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MVCStudenClassAssinment.DAL.Helper
+namespace MVCStudentClassAssignment.DAL.Helper
 {
     public static class Helper
     {

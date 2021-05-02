@@ -49,13 +49,13 @@
     <Compile Include="Services\StudentService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MVCStudenClassAssinment.DAL\MVCStudenClassAssinment.DAL.csproj">
+    <ProjectReference Include="..\MVCStudenClassAssinment.DAL\MVCStudentClassAssignment.DAL.csproj">
       <Project>{a18bfb92-7bc6-4fa7-bdcd-451a308b4894}</Project>
-      <Name>MVCStudenClassAssinment.DAL</Name>
+      <Name>MVCStudentClassAssignment.DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MVCStudenClassAssinment.Model\MVCStudenClassAssinment.Model.csproj">
+    <ProjectReference Include="..\MVCStudenClassAssinment.Model\MVCStudentClassAssignment.Model.csproj">
       <Project>{31BBFADD-DE37-4FBD-9740-DC67C4AF0A15}</Project>
-      <Name>MVCStudenClassAssinment.Model</Name>
+      <Name>MVCStudentClassAssignment.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

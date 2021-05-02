@@ -1,4 +1,4 @@
-﻿namespace MVCStudenClassAssinment.Model
+﻿namespace MVCStudentClassAssignment.Model
 { 
    public enum UserTypes
     {

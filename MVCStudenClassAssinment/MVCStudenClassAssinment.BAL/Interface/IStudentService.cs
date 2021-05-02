@@ -1,8 +1,8 @@
-﻿using MVCStudenClassAssinment.Model;
-using MVCStudenClassAssinment.Model.ViewModel;
+﻿using MVCStudentClassAssignment.Model;
+using MVCStudentClassAssignment.Model.ViewModel;
 using System.Collections.Generic;
 
-namespace MVCStudenClassAssinment.BAL
+namespace MVCStudentClassAssignment.BAL
 {
     public interface IStudentService
     {

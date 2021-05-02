@@ -1,4 +1,4 @@
-﻿namespace MVCStudenClassAssinment.DAL.Migrations
+﻿namespace MVCStudentClassAssignment.DAL.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

@@ -72,9 +72,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MVCStudenClassAssinment.Model\MVCStudenClassAssinment.Model.csproj">
+    <ProjectReference Include="..\MVCStudenClassAssinment.Model\MVCStudentClassAssignment.Model.csproj">
       <Project>{31BBFADD-DE37-4FBD-9740-DC67C4AF0A15}</Project>
-      <Name>MVCStudenClassAssinment.Model</Name>
+      <Name>MVCStudentClassAssignment.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

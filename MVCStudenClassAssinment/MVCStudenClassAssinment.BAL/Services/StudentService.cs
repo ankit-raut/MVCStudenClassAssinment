@@ -1,16 +1,16 @@
-﻿using MVCStudenClassAssinment.DAL;
-using MVCStudenClassAssinment.Model;
-using MVCStudenClassAssinment.Model.ViewModel;
+﻿using MVCStudentClassAssignment.DAL;
+using MVCStudentClassAssignment.Model;
+using MVCStudentClassAssignment.Model.ViewModel;
 
 using System;
 using System.Collections.Generic;
 
-namespace MVCStudenClassAssinment.BAL
+namespace MVCStudentClassAssignment.BAL
 {
     public class StudentService : IStudentService
     {
         #region Private variable
-        private readonly MVCStudenClassAssinment.DAL.IStudentService _studentService = null;
+        private readonly MVCStudentClassAssignment.DAL.IStudentService _studentService = null;
         private readonly IStudentClassService _studentClassService = null;
 
         #endregion
@@ -19,7 +19,7 @@ namespace MVCStudenClassAssinment.BAL
 
         public StudentService()
         {
-            _studentService = new MVCStudenClassAssinment.DAL.StudentService();
+            _studentService = new MVCStudentClassAssignment.DAL.StudentService();
             _studentClassService = new StudentClassService();
         }
 

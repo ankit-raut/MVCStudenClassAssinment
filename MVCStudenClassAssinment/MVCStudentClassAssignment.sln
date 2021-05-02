@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1340
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCStudenClassAssinment", "MVCStudenClassAssinment\MVCStudenClassAssinment.csproj", "{1006217B-4649-47DB-9D48-7F63B0C53DC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCStudentClassAssignment", "MVCStudenClassAssinment\MVCStudentClassAssignment.csproj", "{1006217B-4649-47DB-9D48-7F63B0C53DC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCStudenClassAssinment.BAL", "MVCStudenClassAssinment.BAL\MVCStudenClassAssinment.BAL.csproj", "{720526B6-CDE3-4EAD-87AA-35BDD3A60260}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCStudentClassAssignment.BAL", "MVCStudenClassAssinment.BAL\MVCStudentClassAssignment.BAL.csproj", "{720526B6-CDE3-4EAD-87AA-35BDD3A60260}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCStudenClassAssinment.DAL", "MVCStudenClassAssinment.DAL\MVCStudenClassAssinment.DAL.csproj", "{A18BFB92-7BC6-4FA7-BDCD-451A308B4894}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCStudentClassAssignment.DAL", "MVCStudenClassAssinment.DAL\MVCStudentClassAssignment.DAL.csproj", "{A18BFB92-7BC6-4FA7-BDCD-451A308B4894}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCStudenClassAssinment.Model", "MVCStudenClassAssinment.Model\MVCStudenClassAssinment.Model.csproj", "{31BBFADD-DE37-4FBD-9740-DC67C4AF0A15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCStudentClassAssignment.Model", "MVCStudenClassAssinment.Model\MVCStudentClassAssignment.Model.csproj", "{31BBFADD-DE37-4FBD-9740-DC67C4AF0A15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

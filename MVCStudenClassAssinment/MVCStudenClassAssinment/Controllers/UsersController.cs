@@ -1,12 +1,12 @@
-﻿using MVCStudenClassAssinment.DAL;
-using MVCStudenClassAssinment.Model.Model;
+﻿using MVCStudentClassAssignment.DAL;
+using MVCStudentClassAssignment.Model.Model;
 
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 
-namespace MVCStudenClassAssinment.Controllers
+namespace MVCStudentClassAssignment.Controllers
 {
     public class UsersController : Controller
     {

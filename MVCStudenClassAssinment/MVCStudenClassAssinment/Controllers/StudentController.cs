@@ -1,12 +1,12 @@
-﻿using MVCStudenClassAssinment.BAL;
-using MVCStudenClassAssinment.Model;
-using MVCStudenClassAssinment.Model.ViewModel;
+﻿using MVCStudentClassAssignment.BAL;
+using MVCStudentClassAssignment.Model;
+using MVCStudentClassAssignment.Model.ViewModel;
 
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
-namespace MVCStudenClassAssinment.Controllers
+namespace MVCStudentClassAssignment.Controllers
 {
     public class StudentController : Controller
     {

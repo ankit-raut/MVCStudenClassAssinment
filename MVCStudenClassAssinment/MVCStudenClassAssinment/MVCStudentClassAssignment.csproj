@@ -211,17 +211,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MVCStudenClassAssinment.BAL\MVCStudenClassAssinment.BAL.csproj">
+    <ProjectReference Include="..\MVCStudenClassAssinment.BAL\MVCStudentClassAssignment.BAL.csproj">
       <Project>{720526b6-cde3-4ead-87aa-35bdd3a60260}</Project>
-      <Name>MVCStudenClassAssinment.BAL</Name>
+      <Name>MVCStudentClassAssignment.BAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MVCStudenClassAssinment.DAL\MVCStudenClassAssinment.DAL.csproj">
+    <ProjectReference Include="..\MVCStudenClassAssinment.DAL\MVCStudentClassAssignment.DAL.csproj">
       <Project>{A18BFB92-7BC6-4FA7-BDCD-451A308B4894}</Project>
-      <Name>MVCStudenClassAssinment.DAL</Name>
+      <Name>MVCStudentClassAssignment.DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MVCStudenClassAssinment.Model\MVCStudenClassAssinment.Model.csproj">
+    <ProjectReference Include="..\MVCStudenClassAssinment.Model\MVCStudentClassAssignment.Model.csproj">
       <Project>{31bbfadd-de37-4fbd-9740-dc67c4af0a15}</Project>
-      <Name>MVCStudenClassAssinment.Model</Name>
+      <Name>MVCStudentClassAssignment.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

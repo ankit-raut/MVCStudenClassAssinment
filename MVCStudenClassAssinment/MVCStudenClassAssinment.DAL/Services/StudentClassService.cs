@@ -1,11 +1,11 @@
-﻿using MVCStudenClassAssinment.DAL.Helper;
-using MVCStudenClassAssinment.Model;
-using MVCStudenClassAssinment.Model.Model;
+﻿using MVCStudentClassAssignment.DAL.Helper;
+using MVCStudentClassAssignment.Model;
+using MVCStudentClassAssignment.Model.Model;
 
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MVCStudenClassAssinment.DAL
+namespace MVCStudentClassAssignment.DAL
 {
     public class StudentClassService : IStudentClassService
     {

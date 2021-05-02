@@ -1,19 +1,19 @@
-﻿namespace MVCStudenClassAssinment.DAL.Migrations
+﻿namespace MVCStudentClassAssignment.DAL.Migrations
 {
-    using MVCStudenClassAssinment.Model;
-    using MVCStudenClassAssinment.Model.Model;
+    using MVCStudentClassAssignment.Model;
+    using MVCStudentClassAssignment.Model.Model;
 
     using System.Collections.Generic;
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MVCStudenClassAssinment.DAL.ApplicationDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<MVCStudentClassAssignment.DAL.ApplicationDBContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(MVCStudenClassAssinment.DAL.ApplicationDBContext context)
+        protected override void Seed(MVCStudentClassAssignment.DAL.ApplicationDBContext context)
         {
             IList<User> users = new List<User>();
             users.Add(new User() { Active = true, Email = "Ankit.Raut@gmail.com", FirstName = "Ankit", LastName = "Raut", Phone = "1234567890", UserType = UserTypes.Parent });

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MVCStudenClassAssinment.Model.Model
+namespace MVCStudentClassAssignment.Model.Model
 {
     public class ParentStudent
     {

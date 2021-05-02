@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace MVCStudenClassAssinment.Model
+namespace MVCStudentClassAssignment.Model
 {
     public class StudenParentViewModel
     {

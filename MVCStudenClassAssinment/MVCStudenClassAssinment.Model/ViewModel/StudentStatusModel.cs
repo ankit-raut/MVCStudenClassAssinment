@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MVCStudenClassAssinment.Model.ViewModel
+namespace MVCStudentClassAssignment.Model.ViewModel
 {
     public class StudentStatusModel
     {

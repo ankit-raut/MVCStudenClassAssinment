@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace MVCStudenClassAssinment.Controllers
+namespace MVCStudentClassAssignment.Controllers
 {
     public class ErrorController : Controller
     {

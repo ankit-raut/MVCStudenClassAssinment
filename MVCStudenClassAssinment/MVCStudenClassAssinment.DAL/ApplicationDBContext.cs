@@ -1,10 +1,10 @@
-﻿using MVCStudenClassAssinment.Model.Model;
+﻿using MVCStudentClassAssignment.Model.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace MVCStudenClassAssinment.DAL
+namespace MVCStudentClassAssignment.DAL
 {
     public class ApplicationDBContext : DbContext
     {
