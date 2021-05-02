@@ -22,37 +22,37 @@ var StudentList = {
             type: 'POST',
             success: function (data) {
                 if (data.IsSuccess) {
-                    StudentList.ToastMessage("success","Successfully Updated !")
+                    CommanScript.ToastMessage("success","Successfully Updated !")
                 }
                 else {
-                    StudentList.ToastMessage("error", "Not Updated !")
+                    CommanScript.ToastMessage("error", "Not Updated !")
                 }
             },
             error: function () {
-                StudentList.ToastMessage("error", "Not Updated !")
+                CommanScript.ToastMessage("error", "Not Updated !")
             }
         });
     },
-    ToastMessage: function (type,message) {
-        toastr.options = {
-            "closeButton": false,
-            "debug": false,
-            "newestOnTop": false,
-            "progressBar": false,
-            "positionClass": "toast-top-right",
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "5000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-        }
-        toastr[type](message)
-    },
+    //ToastMessage: function (type,message) {
+    //    toastr.options = {
+    //        "closeButton": false,
+    //        "debug": false,
+    //        "newestOnTop": false,
+    //        "progressBar": false,
+    //        "positionClass": "toast-top-right",
+    //        "preventDuplicates": false,
+    //        "onclick": null,
+    //        "showDuration": "300",
+    //        "hideDuration": "1000",
+    //        "timeOut": "5000",
+    //        "extendedTimeOut": "1000",
+    //        "showEasing": "swing",
+    //        "hideEasing": "linear",
+    //        "showMethod": "fadeIn",
+    //        "hideMethod": "fadeOut"
+    //    }
+    //    toastr[type](message)
+    //},
     GetActiveStatusStudentId: function () {
         var selectedStudentIds = [];
         $.each($("input:checkbox"), function () {

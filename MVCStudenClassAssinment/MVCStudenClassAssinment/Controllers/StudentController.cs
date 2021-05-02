@@ -17,7 +17,10 @@ namespace MVCStudenClassAssinment.Controllers
             studentService = new StudentService();
         }
 
-        // GET: Student
+        /// <summary>
+        /// List of Students
+        /// </summary>
+        /// <returns>view</returns>
         [HttpGet]
         public ActionResult Index()
         {
@@ -25,23 +28,40 @@ namespace MVCStudenClassAssinment.Controllers
             return View(GetStudenDetailsList());
         }
 
+        /// <summary>
+        /// Call Edit action get method
+        /// </summary>
+        /// <param name="studentId">by studentId</param>
+        /// <returns>view</returns>
         [HttpGet]
         public ActionResult Edit(int studentId) => View(GetStudenDetailById(studentId));
 
+        /// <summary>
+        ///  Call Edit action post method to update data in database
+        /// </summary>
+        /// <param name="model">StudenParentViewModel</param>
+        /// <returns>view</returns>
         [HttpPost]
         public ActionResult Edit(StudenParentViewModel model)
         {
             ModelState.Remove("StudentEmail");
-            if (ModelState.IsValid && SaveStudentDetails(model))
+            if (ModelState.IsValid && SaveStudentDetails(model) && model.StudentClassId != 0)
             {
                 ViewBag.Message = TempData["Message"] = "Successfully Updated !";
                 return RedirectToAction("Index");
             }
+            else           
+                ModelState.AddModelError(nameof(model.StudentClassId), "Select valid Class");
             ViewBag.Message = "Not Updated !";
             model.StudentClassList = studentService.GetClassList();
             return View(model);
         }
 
+        /// <summary>
+        /// This method is used to update Active status of student.
+        /// </summary>
+        /// <param name="studentId">array of StudentStatusModel</param>
+        /// <returns>true=> success, false=> error</returns>
         [HttpPost]
         public JsonResult UpdateStudentStatus(StudentStatusModel[] studentStatus)
         {

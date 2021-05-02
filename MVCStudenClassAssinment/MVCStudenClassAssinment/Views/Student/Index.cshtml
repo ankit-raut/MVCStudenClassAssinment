@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<MVCStudenClassAssinment.Model.StudenParentViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "List of Students";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 
 
@@ -109,7 +109,7 @@
         StudentList.Init();
         var message = "@ViewBag.Message";
         if (message) {
-        StudentList.ToastMessage("success", message);
+            CommanScript.ToastMessage("success", message);
         }
     });
 </script>

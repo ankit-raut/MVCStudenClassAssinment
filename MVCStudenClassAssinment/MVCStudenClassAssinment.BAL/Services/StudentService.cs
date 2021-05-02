@@ -1,6 +1,7 @@
 ﻿using MVCStudenClassAssinment.DAL;
 using MVCStudenClassAssinment.Model;
 using MVCStudenClassAssinment.Model.ViewModel;
+
 using System;
 using System.Collections.Generic;
 
@@ -26,15 +27,62 @@ namespace MVCStudenClassAssinment.BAL
 
         #region Public Method
 
-        public StudenParentViewModel GetStudenDetailById(int studentId) => _studentService.GetStudentDetailById(studentId);
+        /// <summary>
+        /// This method is used to get Student Details 
+        /// </summary>
+        /// <param name="studentId">Get by studentId</param>
+        /// <returns>Model</returns>
+        public StudenParentViewModel GetStudenDetailById(int studentId) => GetStudentDetailsById(studentId);
 
-        public List<StudenParentViewModel> GetStudenDetailsList() => _studentService.GetStudentDetailList();
+        /// <summary>
+        /// This method is used to get List of student 
+        /// </summary>
+        /// <returns>List of model</returns>
+        public List<StudenParentViewModel> GetStudenDetailsList() => GetStudentDetailsList();
 
-        public bool SaveStudentDetails(StudenParentViewModel model) => _studentService.SaveStudentDetails(model);
+        /// <summary>
+        /// This method is used update Student Details list
+        /// </summary>
+        /// <param name="model">updated Model</param>
+        /// <returns>true=> success, false=> error</returns>
+        public bool SaveStudentDetails(StudenParentViewModel model) => SaveStudentDetail(model);
 
-        public List<SchoolClassViewModel> GetClassList() => _studentService.GetClassList();
+        /// <summary>
+        /// This method is used get list of Classes
+        /// </summary>
+        /// <returns>list of Classes</returns>
+        public List<SchoolClassViewModel> GetClassList() => GetStudentClassList();
 
+        /// <summary>
+        /// This method is used to update Active status from List page.
+        /// </summary>
+        /// <param name="studentStatusModel">array of StudentStatusModel</param>
+        /// <returns>true=> success, false=> error</returns>
         public bool UpdateStatus(StudentStatusModel[] studentStatusModel) => UpdateUserStatus(studentStatusModel);
+
+        #endregion
+
+        #region Private Methods
+
+        private List<SchoolClassViewModel> GetStudentClassList()
+        {
+            return _studentService.GetClassList();
+        }
+
+        private bool SaveStudentDetail(StudenParentViewModel model)
+        {
+            return _studentService.SaveStudentDetails(model);
+        }
+
+        private List<StudenParentViewModel> GetStudentDetailsList()
+        {
+            return _studentService.GetStudentDetailList();
+        }
+
+        private StudenParentViewModel GetStudentDetailsById(int studentId)
+        {
+            return _studentService.GetStudentDetailById(studentId);
+        }
 
         private bool UpdateUserStatus(StudentStatusModel[] studentStatusModel)
         {

@@ -1,8 +1,7 @@
 ﻿using MVCStudenClassAssinment.DAL.Helper;
 using MVCStudenClassAssinment.Model;
 using MVCStudenClassAssinment.Model.Model;
-using MVCStudenClassAssinment.Model.ViewModel;
-using System;
+
 using System.Collections.Generic;
 using System.Linq;
 

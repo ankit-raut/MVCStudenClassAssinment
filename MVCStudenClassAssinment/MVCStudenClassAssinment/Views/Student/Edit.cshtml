@@ -1,25 +1,19 @@
 ﻿@model MVCStudenClassAssinment.Model.StudenParentViewModel
-
 @{
     ViewBag.Title = "Edit";
 
     List<SelectListItem> selectListItems = new List<SelectListItem>() { new SelectListItem { Text = "Select Class", Value = "0" } };
     Model.StudentClassList.ForEach(x => selectListItems.Add(new SelectListItem { Text = x.Name, Value = x.ClassId.ToString(), Selected = x.ClassId == Model.StudentClassId }));
 }
-
-<h2>Edit</h2>
-
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>SchoolClassViewModel</h4>
         <hr />
-        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
-        @Html.HiddenFor(model => model.StudentId)
-
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.StudentFirstName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -82,24 +76,21 @@
             </div>
         </div>
     </div>
+    @Html.HiddenFor(model => model.StudentId)
     @Html.HiddenFor(model => model.ParentFirstName)
     @Html.HiddenFor(model => model.ParentLastName)
-
 }
-
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
 <script>
  $(document).ready(function () {
-        StudentList.Init();
         var message = "@ViewBag.Message";
         if (message) {
-        StudentList.ToastMessage("error", message);
+            CommanScript.ToastMessage("error", message);
         }
         });
 </script>
